@@ -1,0 +1,41 @@
+<div class="SiteButtons">
+  <div class="ui grid">
+    <div v-for="(row, i) in sitesTable" 
+      class="equal width row"
+      :class="{'button-header': (i === 0)}">
+      <template v-for="(column, j) in row">
+        <div 
+          v-if="!valueType(column)"
+          class="column"
+          :class="{'button-header': (j === 0)}">
+          {{ column }}
+        </div>
+        <div v-else
+          class="column">
+          <a :href="column"
+            target="_blank"
+            @click.prevent.stop="popup(column)"
+            :class="computedButtonType(j, column)"
+            class="ui fluid labeled icon button">
+            <i :class="computedButtonIcon(column)"></i>
+            {{ valueType(column) }}
+          </a>
+        </div>
+      </template>
+        
+    </div>
+    <div class="equal width row">
+      <div class="column">
+        <a href="https://docs.google.com/spreadsheets/d/1in-n9Ax549nfiiEwDnFzWvmvi1Tr5It3WRLl73tAtOg/edit#gid=0" 
+          target="_blank"
+          @click.prevent.stop="popup()"
+          class="ui fluid positive labeled icon button">
+          <i class="table icon"></i>
+          {{ $t('Sites') }}
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>

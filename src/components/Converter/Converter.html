@@ -1,0 +1,84 @@
+<form class="Converter ui form">
+  <div class="fields">
+    <div class="eight wide field">
+      <label for="LocalConfigTitle">
+        {{ $t('Title') }}
+      </label>
+      <input type="text" id="LocalConfigTitle" v-model="title" />
+    </div>
+    <div class="eight wide field">
+      <label for="LocalConfigLink">
+        {{ $t('Link') }}
+      </label>
+      <input type="url" id="LocalConfigLink" v-model="link" />
+    </div>
+  </div>
+
+  <div class="ui grid">
+    <div class="row button-header">
+      <div class="four wide column">
+        {{ $t('Course') }}
+      </div>
+      <div class="four wide column">
+        {{ $t('iClass Chapter') }}
+      </div>
+      <div class="four wide column">
+        {{ $t('Teams Title') }}
+      </div>
+      <div class="four wide column">
+        {{ $t('Slide Title & Description') }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="four wide column">
+        
+      </div>
+      <div class="four wide column">
+        <button 
+          type="button" 
+          class="ui fluid teal button" 
+          :disabled="this.titleDisabled"
+          :title="$t('For Chapter')" 
+          @click="copyPlainText(titleForChapter)">{{ titleForChapter }}</button>
+      </div>
+      <div class="four wide column">
+        <button 
+          type="button" 
+          class="ui fluid violet button" 
+          :disabled="this.titleDisabled"
+          :title="$t('For Teams')" 
+          @click="copyPlainText(titleForTeams)">{{ titleForTeams }}</button>
+        <br />
+        <button 
+          type="button" 
+          class="ui fluid purple button" 
+          :disabled="this.titleDisabled"
+          :title="$t('For Teams English')" 
+          @click="copyPlainText(titleForTeamsEng)">{{ titleForTeamsEng }}</button>
+      </div>
+      <div class="four wide column">
+        <button 
+          type="button" 
+          class="ui fluid orange button" 
+          :disabled="this.titleDisabled"
+          :title="$t('For Slide Title')" 
+          @click="copyPlainText(titleForSlide)">{{ titleForSlide }}</button><br />
+        <button 
+          type="button" 
+          class="ui fluid yellow button" 
+          :disabled="this.titleDisabled"
+          :title="$t('For Slide Title English')" 
+          @click="copyPlainText(titleForSlideEng)">{{ titleForSlideEng }}</button> <br />
+        <button 
+          type="button" 
+          :disabled="this.linkDisabled"
+          class="ui fluid olive button" 
+          :title="$t('For Slide Description')" 
+          @click="copyRichText(linkHTML)">{{ $t('Slide Description') }}</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <div class="ui divider"></div>
+</form>
