@@ -75,21 +75,21 @@ let app = {
         return '-'
       }
 
-      return 'Week ' + this.titleMain
+      return 'Week ' + this.titleNoCourse
     },
     titleForTeams () {
       if (this.titleDisabled) {
         return '-'
       }
 
-      return '課程記錄 - Week ' + this.titleMain
+      return '課程記錄 - Week ' + this.titleNoCourse
     },
     titleForTeamsEng () {
       if (this.titleDisabled) {
         return '-'
       }
 
-      return 'Course Record - Week ' + this.titleMain
+      return 'Course Record - Week ' + this.titleNoCourse
     },
     titleForSlide () {
       if (this.titleDisabled) {
