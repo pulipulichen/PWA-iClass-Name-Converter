@@ -9,8 +9,10 @@ let app = {
   data () {    
     this.$i18n.locale = this.db.localConfig.locale
     return {
-      title: `16. 期末報告(II) / Final Report - 111-2 數位典藏與數位人文概論`,
-      link: `https://docs.google.com/presentation/d/1HxOjpuTMdhjTf4WnRuvPmHRoluaFVwrNbOela_6-oec/edit?usp=sharing`
+      // title: `16. 期末報告(II) / Final Report - 111-2 數位典藏與數位人文概論`,
+      // link: `https://docs.google.com/presentation/d/1HxOjpuTMdhjTf4WnRuvPmHRoluaFVwrNbOela_6-oec/edit?usp=sharing`
+      title: ``,
+      link: ``
     }
   },
   watch: {
